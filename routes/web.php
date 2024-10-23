@@ -46,6 +46,9 @@ Route::group(['middleware' => ['auth', 'active']], function () {
     })->name('dashboard');
 
     Route::get('/shop', [HomeController::class, 'index'])->name('dashboard.user');
+    Route::get('/category/{id}', [HomeController::class, 'showCategoryProducts'])->name('category.products');
+    Route::get('/product/{id}', [HomeController::class, 'show'])->name('product.show');
+
 
 
     Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
@@ -61,7 +64,6 @@ Route::group(['middleware' => ['auth', 'active']], function () {
         Route::get('/order-details/{id}', [OrderController::class, 'show'])->name('order.details');
 
         Route::get('/my-orders', [OrderController::class, 'myOrders'])->name('my-orders');
-
     });
 
 

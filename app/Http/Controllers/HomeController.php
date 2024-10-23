@@ -30,4 +30,28 @@ class HomeController extends Controller
         $categories = Category::all();
         return view('index', compact('products', 'categories'));
     }
+
+    public function showCategoryProducts($id)
+    {
+        $category = Category::findOrFail($id);
+        $products = Product::where('category_id', $id)->orderByDesc('id')->paginate(10);
+        $categories = Category::all();
+
+        return view('layouts.cateproduct', compact('products', 'categories', 'category'))->with('hideBanner', true);
+    }
+
+    public function show($id)
+    {
+        $categories = Category::all();
+        $product = Product::with('category')->findOrFail($id);
+
+        // Lấy các sản phẩm liên quan (cùng danh mục, trừ sản phẩm hiện tại)
+        $relatedProducts = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $id)
+            ->orderByDesc('id')
+            ->take(5)
+            ->get();
+
+        return view('layouts.detailproduct', compact('product', 'categories', 'relatedProducts'))->with('hideBanner', true);
+    }
 }

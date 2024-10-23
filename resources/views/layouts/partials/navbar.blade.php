@@ -36,7 +36,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Danh Mục</a>
                         <div class="dropdown-menu m-0 bg-secondary rounded-0">
                             @foreach ($categories as $category)
-                                <a href="#" class="dropdown-item d-flex align-items-center">
+                                <a href="{{ route('category.products', $category->id) }}" class="dropdown-item d-flex align-items-center">
                                     <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}"
                                         class="me-2" style="width: 50px; height: 50px; object-fit: cover;">
                                     {{ $category->name }}
