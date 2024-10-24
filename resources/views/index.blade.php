@@ -5,19 +5,19 @@
         <h1 class="display-4">Bestseller Products</h1>
     </div>
     <div class="row g-4">
-        @foreach ($products as $product)
+        @foreach ($hots as $hot)
             <div class="col-lg-6 col-xl-4">
                 <div class="p-4 rounded bg-light">
                     <div class="row align-items-center">
                         <div class="col-6">
-                            <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid rounded-circle"
-                                style="width: 150px; height: 150px; object-fit: cover;" alt="{{ $product->name }}">
+                            <img src="{{ asset('storage/' . $hot->image) }}" class="img-fluid rounded-circle"
+                                style="width: 150px; height: 150px; object-fit: cover;" alt="{{ $hot->name }}">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">{{ $product->name }}</a>
-                            <h4 class="mb-4 mt-2 text-muted fw-normal text-primary">{{ number_format($product->price) }} VND
+                            <a href="#" class="h5">{{ $hot->name }}</a>
+                            <h4 class="mb-4 mt-2 text-muted fw-normal text-primary">{{ number_format($hot->price) }} VND
                             </h4>
-                            <a href="javascript:void(0);" data-id="{{ $product->id }}"
+                            <a href="javascript:void(0);" data-id="{{ $hot->id }}"
                                 class="btn border border-secondary rounded-pill px-3 text-primary add-prods-cart">
                                 <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                             </a>
@@ -107,7 +107,7 @@
                                 <div class="rounded position-relative fruite-item">
                                     <div class="fruite-img" style="height: 250px; overflow: hidden;">
                                         <a href="{{ route('product.show', $product->id) }}">
-                                            <img src="
+                                            <img src="{{ asset('storage/' . $product->image) }}"
                                                 class="img-fluid w-100 h-100 rounded-top" style="object-fit: cover;"
                                                 alt="{{ $product->name }}">
                                         </a>

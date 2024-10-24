@@ -26,9 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::orderByDesc('id')->paginate(10);
+        $products = Product::orderByDesc('id')->paginate(12);
+        $hots = Product::orderByDesc('id')->paginate(6);
         $categories = Category::all();
-        return view('index', compact('products', 'categories'));
+        return view('index', compact('products', 'hots', 'categories'));
     }
 
     public function showCategoryProducts($id)
