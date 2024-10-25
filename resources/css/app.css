@@ -1,0 +1,8 @@
+.fruite-item {
+    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+.fruite-item:hover {
+    transform: scale(1.05); /* Tăng kích thước khi hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Thêm bóng cho sản phẩm */
+}

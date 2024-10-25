@@ -64,6 +64,7 @@ Route::group(['middleware' => ['auth', 'active']], function () {
         Route::get('/order-details/{id}', [OrderController::class, 'show'])->name('order.details');
 
         Route::get('/my-orders', [OrderController::class, 'myOrders'])->name('my-orders');
+
     });
 
 

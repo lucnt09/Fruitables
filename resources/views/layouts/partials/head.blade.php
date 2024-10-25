@@ -20,3 +20,4 @@
 
 <!-- Template Stylesheet -->
 <link href="{{ asset('user/css/style.css') }}" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

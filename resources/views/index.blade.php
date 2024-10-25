@@ -27,6 +27,30 @@
             </div>
         @endforeach
     </div>
+
+    <div class="row g-4" id="products-container">
+        <!-- Tất cả sản phẩm sẽ được chèn ở đây -->
+    </div>
+    <div id="product-detail-container">
+
+    </div>
+    <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="product-detail-content">
+                    <!-- Nội dung chi tiết sản phẩm sẽ được chèn vào đây -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('product')
@@ -60,7 +84,7 @@
                 <div class="row g-4">
                     @foreach ($products as $product)
                         <div class="col-md-6 col-lg-4 col-xl-3">
-                            <div class="rounded position-relative fruite-item">
+                            <div class="rounded position-relative fruite-item" data-id="{{ $product->id }}">
                                 <div class="fruite-img" style="height: 250px; overflow: hidden;">
                                     <!-- Link đến trang chi tiết sản phẩm -->
                                     <a href="{{ route('product.show', $product->id) }}">
