@@ -75,32 +75,6 @@
     });
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // Gọi API để lấy tất cả sản phẩm
-        axios.get('/api/products')
-            .then(function(response) {
-                let products = response.data;
-                let productsContainer = document.getElementById('products-container');
-
-                products.forEach(function(product) {
-                    productsContainer.innerHTML += `
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <div class="rounded position-relative fruite-item">
-                                <div class="fruite-img" style="height: 250px; overflow: hidden;">
-                                    <img src="/storage/${product.image}" class="img-fluid w-100 h-100 rounded-top"
-                                         style="object-fit: cover;" alt="${product.name}">
-                                </div>
-                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                    <h4>${product.name}</h4>
-                                    <p>${product.price} VND</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-            });
-    });
 
     $(document).ready(function() {
         var hoverTimeout; // Biến lưu trữ timeout để quản lý thời gian

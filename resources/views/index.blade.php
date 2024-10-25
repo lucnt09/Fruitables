@@ -28,12 +28,6 @@
         @endforeach
     </div>
 
-    <div class="row g-4" id="products-container">
-        <!-- Tất cả sản phẩm sẽ được chèn ở đây -->
-    </div>
-    <div id="product-detail-container">
-
-    </div>
     <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
