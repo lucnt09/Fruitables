@@ -12,7 +12,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script>
     $(document).on("click", ".add-prods-cart", function() {
-        console.log(123);
+        console.log($(this).data('id'));
         const product_id = $(this).data('id');
 
         $.ajax({

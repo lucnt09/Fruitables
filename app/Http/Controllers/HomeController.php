@@ -55,4 +55,18 @@ class HomeController extends Controller
 
         return view('layouts.detailproduct', compact('product', 'categories', 'relatedProducts'))->with('hideBanner', true);
     }
+
+    public function about()
+    {
+        $categories = Category::all();
+
+        return view('layouts.about', compact('categories'))->with('hideBanner', true);
+    }
+
+    public function contact()
+    {
+        $categories = Category::all();
+
+        return view('layouts.contact', compact('categories'))->with('hideBanner', true);
+    }
 }

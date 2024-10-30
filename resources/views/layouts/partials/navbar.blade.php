@@ -29,8 +29,8 @@
             </button>
             <div class="collapse navbar-collapse bg-white d-flex justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="http://fruitables.test/shop" class="nav-item nav-link active">Trang Chủ</a>
-                    <a href="http://fruitables.test/shop" class="nav-item nav-link">Giới Thiệu</a>
+                    <a href="{{ route('dashboard.user') }}" class="nav-item nav-link active">Trang Chủ</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link">Giới Thiệu</a>
 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Danh Mục</a>
@@ -44,7 +44,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <a href="http://fruitables.test/shop" class="nav-item nav-link">Liên Hệ</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link">Liên Hệ</a>
                 </div>
                 <div class="d-flex align-items-center">
                     <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"

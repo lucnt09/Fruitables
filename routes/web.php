@@ -48,7 +48,8 @@ Route::group(['middleware' => ['auth', 'active']], function () {
     Route::get('/shop', [HomeController::class, 'index'])->name('dashboard.user');
     Route::get('/category/{id}', [HomeController::class, 'showCategoryProducts'])->name('category.products');
     Route::get('/product/{id}', [HomeController::class, 'show'])->name('product.show');
-
+    Route::get('/about', [HomeController::class, 'about'])->name('about');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 
     Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
